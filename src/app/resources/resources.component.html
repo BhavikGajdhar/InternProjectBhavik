@@ -1,0 +1,38 @@
+<p>resources works!</p>
+
+<!-- ---------------------------------------- -->
+    <h1>Reactive form</h1>
+<div class="col-sm-6">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+        <div class="form-group">
+            <label>Student Name</label>
+            <input type="text" required class="form-control" name="username" formControlName="username" placeholder="User name">
+        <span class="error" *ngIf="!userForm.controls.username.valid && userForm.controls.username.touched" 
+                             class="error">User name is required</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Roll_No</label>
+            <input type="text" required class="form-control" name="roll no" formControlName="rollNo" placeholder="Roll no">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" required class="form-control" name="address" formControlName="address" placeholder="Address">
+        </div>
+        <br>
+        <div formArrayName="skill">
+            <label >Skills</label>
+            <button class="btn btn-primary" (click)="onAddSkill()"> + </button>
+            <ng-container *ngFor="let studentSkill of skill.controls; let skillIndex=index" [formControlName]="skillIndex"><br>
+            <input type="text" class="form-control" name="skill" formControlName="skill" placeholder=" Enter Skills">
+
+            <div class="form-group" *ngIf="userForm.value.skill.length >1">
+                <button class="btn btn-danger" (click)="onDeleteSkill(skillIndex)">Delete</button>
+            </div>
+            </ng-container>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid && userForm.untouched">Submit</button>
+    </form>
+</div>

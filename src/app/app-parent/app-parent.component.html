@@ -1,0 +1,6 @@
+<p>app-parent works!</p>
+<div>
+    <span *ngIf="personsName">{{personsName | uppercase}} casted his vote</span>
+</div>
+
+<app-app-child [names]="frientlist" (onVoted)="funVote($event)"></app-app-child>
