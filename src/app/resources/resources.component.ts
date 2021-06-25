@@ -20,7 +20,7 @@ export class ResourcesComponent implements OnInit {
     address: [''],       //[Validators.pattern('^[A-Za-z \-]*$')]
     // address: this.fb.group({}),
     skill: this.fb.array([
-      this.fb.control('')
+      this.fb.control(''),
     ])
   });
 
