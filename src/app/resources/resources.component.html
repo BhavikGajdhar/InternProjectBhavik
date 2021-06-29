@@ -3,10 +3,10 @@
 <!-- ---------------------------------------- -->
     <h1>Reactive form</h1>
 <div class="col-sm-6">
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>Student Name</label>
-            <input type="text" required class="form-control" name="username" formControlName="username" placeholder="User name">
+            <input type="text" required class="form-control" name="username" formControlName="username" placeholder="Student name">
         <span class="error" *ngIf="!userForm.controls.username.valid && userForm.controls.username.touched" 
                              class="error">User name is required</span>
         </div>
@@ -23,16 +23,16 @@
         <br>
         <div formArrayName="skill">
             <label >Skills</label>
-            <button class="btn btn-primary" (click)="onAddSkill()"> + </button>
-            <ng-container *ngFor="let studentSkill of skill.controls; let skillIndex=index" [formControlName]="skillIndex"><br>
+            <button class="btn btn-primary" (click)="onAddSkill()"> + </button><br>
+            <ng-container *ngFor="let studentSkill of skill.controls; let skillIndex=index" [formControlName]="skillIndex">
             <input type="text" class="form-control" name="skill" formControlName="skill" placeholder=" Enter Skills">
 
-            <div class="form-group" *ngIf="userForm.value.skill.length >1">
+            <div class="col-md-2 mb-3 mt-4" *ngIf="userForm.value.skill.length >1">
                 <button class="btn btn-danger" (click)="onDeleteSkill(skillIndex)">Delete</button>
             </div>
             </ng-container>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid && userForm.untouched">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!userForm.invalid ">Submit</button>
     </form>
 </div>

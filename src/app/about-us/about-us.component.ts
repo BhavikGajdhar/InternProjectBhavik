@@ -22,9 +22,9 @@ export class AboutUsComponent implements OnInit {
      // this.Public = data;
       console.log(this.Public);
     })
-    setTimeout(() => {
-    this.Public.unsubscribe();
-  }, 3000);
+  //   setTimeout(() => {
+  //   this.Public.unsubscribe();
+  // }, 10000);
 
   }
 

@@ -1,0 +1,17 @@
+<p>combine-latest works!</p>
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Select Name</label>
+    <select class="form-control" id="exampleFormControlSelect1" (change)="onChangeName($event)">
+      <option *ngFor="let item of name" [value]="item">{{item}}</option>
+    </select>
+    <label for="exampleFormControlSelect2">Select Color</label>
+    <select class="form-control" id="exampleFormControlSelect2" (change)="onChangeColor($event)">
+      <option *ngFor="let item of color" [value]="item">{{item}}</option>
+    </select>
+  </div>
+  
+  <h2>Result</h2>
+  <ng-container *ngFor="let item of selectedData">
+    <p> Select name is <b>{{item.name}} </b>and color is <b>{{item.color}}</b></p>
+  </ng-container>
+  
