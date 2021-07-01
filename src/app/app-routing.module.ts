@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'subject', loadChildren: () => import('./subject/subject.module').then(m => m.SubjectModule) },
   { path: 'behaviour-subject', loadChildren: () => import('./behaviour-subject/behaviour-subject.module').then(m => m.BehaviourSubjectModule) },
   { path: 'rxjs-oparator', loadChildren: () => import('./rxjs-oparator/rxjs-oparator.module').then(m => m.RxjsOparatorModule) },
+  { path: 'employeedetail', loadChildren: () => import('./employeedetail/employeedetail.module').then(m => m.EmployeedetailModule) },
   { path:'**',component:AppParentComponent}
 ];
 

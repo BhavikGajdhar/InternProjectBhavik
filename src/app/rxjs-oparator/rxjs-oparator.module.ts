@@ -6,6 +6,7 @@ import { RxjsOparatorComponent } from './rxjs-oparator.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { SearchPipe } from './switch-map/search.pipe';
 import { CombineLatestComponent } from './combine-latest/combine-latest.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,9 @@ import { CombineLatestComponent } from './combine-latest/combine-latest.componen
   ],
   imports: [
     CommonModule,
-    RxjsOparatorRoutingModule
+    RxjsOparatorRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ]
 })

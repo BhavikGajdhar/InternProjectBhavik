@@ -1,0 +1,33 @@
+<p>employeedetail-list-presentation works!</p>
+<button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="add" routerLink='add'>
+    Add Employee
+  </button>
+  
+  <table class="table table-stripede border border-secondary ">
+      <thead class="thead-light">
+        <th>Name</th>
+        <th>Salary</th>
+        <!-- <th>isGreaterSalary</th> -->
+        <th class="text-center">Action</th>
+      </thead>
+      <tbody>
+    
+        <tr *ngFor="let employeeListItem of employeeList">
+          <td>{{employeeListItem.name}}</td>
+          <td>{{employeeListItem.salary}}</td>
+          <!-- <td *ngIf="" > {{employeeListItem.salary}}</td> -->
+
+          <td class="text-center">
+            <!-- <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" [routerLink]="['/product/edit/']+customer.id">
+              edit
+            </button> -->
+    
+            <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="Delete" (click)="deleteEmployee(employeeListItem.emp_id)">
+              delete
+            </button>
+            
+          </td>
+        </tr>
+    
+      </tbody>
+    </table>

@@ -8,30 +8,30 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 })
 export class CombineLatestComponent implements OnInit {
 
-  public name = ['darpen','vishal','nidhi','kiran','darsh','bhavink','ankit','parth']  
+  public name = ['darpen','vishal','nidhi','kiran','darsh','bhavik','ankit','parth']  
   public color = ['red','blue','green']
 
-  public nameSubject = new BehaviorSubject('bhavink');
-  public colorSubject = new BehaviorSubject('blue');
+  public nameSubject = new BehaviorSubject('darpan');
+  public colorSubject = new BehaviorSubject('red');
   public selectedData:any[] =[];
 
   constructor() { }
 
   ngOnInit(): void {
   combineLatest(this.nameSubject,this.colorSubject).subscribe(([res1,res2])=>{
-      debugger
+      
       this.selectedData.push({name:res1,color:res2})
       
     })
 	}
 
 	onChangeName(event:any){
-		debugger
+		
 		this.nameSubject.next(event.target.value);
 	}
 
 	onChangeColor(event:any){
-		debugger
+	
 		this.colorSubject.next(event.target.value);
 
 	}

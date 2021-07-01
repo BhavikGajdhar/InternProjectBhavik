@@ -30,5 +30,22 @@
       "design": "Angular",
       "address": "Valsad"
     }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "ashish",
+      "salary":"10000"
+    },
+    {
+      "id": 2,
+      "name": "jay",
+      "salary":"15000"
+    },
+    {
+      "id": 3,
+      "name": "neel",
+      "salary":"9000"
+    }
   ]
 }

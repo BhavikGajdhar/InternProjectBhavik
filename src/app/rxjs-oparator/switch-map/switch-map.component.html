@@ -1,13 +1,15 @@
 <p>switch-map works!</p>
 
-<h1 style="font-size: 100px; text-align: center;">{{counter}}</h1>
+<!-- <h1 style="font-size: 100px; text-align: center;">{{counter}}</h1> -->
 <label for="search"> Search : </label>
 <input type="text" #search (keyup)="searchtext(search.value)" > 
-<!-- formControlname="search" -->
+<!-- <input type="text"  [formControl]="search" >  -->
+
 <div style="display: flex;">
   <div>
     <h2>Array1</h2>
-    <div *ngFor="let item of (array1 | filter:search.value)">
+    <!-- <div *ngFor="let item of (array1 | filter:search.value)"> -->
+    <div *ngFor="let item of array1">
       <p>{{item}}</p>
     </div>
   </div>
@@ -18,5 +20,3 @@
     </div>
   </div>
 </div>
-
-<!-- (array2 | filter:search.value) -->

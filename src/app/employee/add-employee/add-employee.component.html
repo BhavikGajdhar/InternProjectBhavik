@@ -26,8 +26,14 @@
 
   <h3 class="mb-3 text-center">Employees List</h3>
 
+  <h2 class="py-4">Search</h2>
+<!-- <input type="text" #search (keyup)="searchtext(search.value)" >  -->
+<div class="form-group mb-4">
+  <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search">
+</div>
+
   <div class="col-md-12">
-    <table class="table table-bordered">
+    <table class="table table-bordered" class="table" *ngIf="(Employee | filter: searchText).length > 0; else noResults" >
       <thead>
         <tr>
           <th scope="col">User Id</th>
@@ -38,19 +44,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of Employee">
+        <tr *ngFor="let employee of Employee |filter:searchText; let i=index">
+          <!-- <th scope="row">{{i + 1}}</th> -->
           <td>{{employee.id}}</td>
           <td>{{employee.name}}</td>
           <td>{{employee.design}}</td>
           <td>{{employee.address}}</td>
           <td>
-            <!-- <a class="edit" routerLink="/add-employee/{{employee.id}}">Edit </a> -->
+            <!-- <a class="edit" routerLink="../add-employee/{{employee.id}}">Edit </a> -->
             <button class="btn btn-warning" (click)="getEmployee(employee.id)"> Edit </button> 
             <button class="btn btn-danger"  (click)="deleteEmployee(employee.id)"> Delete </button>
           </td>
         </tr>
       </tbody>
     </table>
+    <ng-template #noResults>
+      <p>No results found for "{{searchText}}".</p>
+    </ng-template>
   </div>
 </div>
  

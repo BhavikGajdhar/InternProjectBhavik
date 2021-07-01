@@ -16,6 +16,8 @@ export class AddEmployeeComponent implements OnInit {
    //id = this.actRoute.snapshot.params['id'];
   
     public employeeDetails:Employee = { id:'',name: '', design : '', address:''};
+
+    searchText!: string;
     
   
 
@@ -88,8 +90,5 @@ export class AddEmployeeComponent implements OnInit {
        // this.loadEmployees();
       })
     
-  }  
-  
-
+  }
 }
- 
