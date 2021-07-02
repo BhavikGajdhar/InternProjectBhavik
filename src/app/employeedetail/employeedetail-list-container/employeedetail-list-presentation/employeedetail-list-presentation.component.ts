@@ -44,8 +44,8 @@ export class EmployeedetailListPresentationComponent implements OnInit {
   }
    
 
-  public deleteEmployee(value:number){
-    this.employeedetailListPresentorService.deleteEmployee(value)
+  public deleteEmployee(id:number){
+    this.employeedetailListPresentorService.deleteEmployee(id)
   }
 
  

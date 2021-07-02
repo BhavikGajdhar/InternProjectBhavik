@@ -10,11 +10,13 @@ import { HomeModule } from './home/home.module';
 //import {HttpClient} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ForkjionComponent } from './forkjion/forkjion.component';
 @NgModule({
   declarations: [
     AppComponent,
     AppChildComponent,
-    AppParentComponent
+    AppParentComponent,
+    ForkjionComponent
   ],
   imports: [
     BrowserModule,

@@ -45,10 +45,10 @@ export class ResourcesComponent implements OnInit {
 
   public onDeleteSkill(index : number){
     const deleteSkillItem = this.userForm.get('skill') as FormArray;
-    deleteSkillItem.removeAt(index=1);
+    deleteSkillItem.removeAt(index);
   }
 
  public  onSubmit(){
-    console.log(this.userForm);
+    console.log(this.userForm.value);
   }
 }

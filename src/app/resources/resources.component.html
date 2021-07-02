@@ -23,7 +23,9 @@
         <br>
         <div formArrayName="skill">
             <label >Skills</label>
+            
             <button class="btn btn-primary" (click)="onAddSkill()"> + </button><br>
+
             <ng-container *ngFor="let studentSkill of skill.controls; let skillIndex=index" [formControlName]="skillIndex">
             <input type="text" class="form-control" name="skill" formControlName="skill" placeholder=" Enter Skills">
 

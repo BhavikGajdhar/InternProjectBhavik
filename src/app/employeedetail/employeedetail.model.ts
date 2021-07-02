@@ -1,13 +1,13 @@
 export class Employeedetail {
-    public emp_id: number;
-    public name: string;
-    public salary: string;
+    public id!: number;
+    public name!: string;
+    public salary!: number;
     constructor(
-        emp_id: number,
+        id: number,
         name: string,
-        salary: string
+        salary: number
     ) {
-        this.emp_id = emp_id;
+        this.id = id;
         this.name = name;
         this.salary = salary;
     }

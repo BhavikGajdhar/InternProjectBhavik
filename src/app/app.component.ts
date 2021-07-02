@@ -4,14 +4,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'InternBhavik';
-  constructor (private router:Router){
-
-  }
-  public onClick():void{
-    this.router.navigate(['about-us'])
+  constructor(private router: Router) {}
+  public onClick(): void {
+    this.router.navigate(['about-us']);
   }
 }

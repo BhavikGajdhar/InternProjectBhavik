@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppParentComponent } from './app-parent/app-parent.component';
 import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { ForkjionComponent } from './forkjion/forkjion.component';
 import { ResourcesComponent } from './resources/resources.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'behaviour-subject', loadChildren: () => import('./behaviour-subject/behaviour-subject.module').then(m => m.BehaviourSubjectModule) },
   { path: 'rxjs-oparator', loadChildren: () => import('./rxjs-oparator/rxjs-oparator.module').then(m => m.RxjsOparatorModule) },
   { path: 'employeedetail', loadChildren: () => import('./employeedetail/employeedetail.module').then(m => m.EmployeedetailModule) },
-  { path:'**',component:AppParentComponent}
+  { path: 'forkjoin', component: ForkjionComponent},
+  { path:'**',component:AppParentComponent},
 ];
 
 @NgModule({

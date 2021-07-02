@@ -22,22 +22,22 @@ export class SwitchMapComponent implements OnInit {
     //   this.counter=res;
     // })
 
-    this.search.valueChanges
-      .pipe(
-        debounceTime(1000),
-        switchMap((value) => {
-         let d= this.array1.filter((item) => {
+    // this.search.valueChanges
+    //   .pipe(
+    //     debounceTime(1000),
+    //     switchMap((value) => {
+    //      let d= this.array1.filter((item) => {
             
-            item.includes(value);
-          })
-          return d;
-        }
-        )
-      )
-      .subscribe((filterdata) => {
+    //         item.includes(value);
+    //       })
+    //       return d;
+    //     }
+    //     )
+    //   )
+    //   .subscribe((filterdata) => {
         
-        this.array2.push(filterdata);
-      });
+    //     this.array2.push(filterdata);
+    //   });
   }
   public searchtext(value: any) {
     this.array2 = this.array1.filter((name) => name.includes(value));

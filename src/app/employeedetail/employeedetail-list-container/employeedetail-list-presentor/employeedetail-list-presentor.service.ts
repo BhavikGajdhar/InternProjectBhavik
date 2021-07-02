@@ -17,9 +17,9 @@ export class EmployeedetailListPresentorService {
        name: new FormControl()
      })
    }
-   public deleteEmployee(value:number){
-    console.log('delete', value);
-    this.employeeId.next(value);
+   public deleteEmployee(id:number){
+    console.log('delete', id);
+    this.employeeId.next(id);
    }
 
 }

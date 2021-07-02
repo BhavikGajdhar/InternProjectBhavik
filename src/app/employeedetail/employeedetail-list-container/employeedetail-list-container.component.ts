@@ -19,8 +19,8 @@ export class EmployeedetailListContainerComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  public onDeleteId(value:number){
-    this.employeeDeatailService.deleteEmployee(value)
+  public onDeleteId(id:number){
+    this.employeeDeatailService.deleteEmployee(id)
 
   }
 
