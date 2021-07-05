@@ -35,22 +35,48 @@
     {
       "id": 1,
       "name": "ashish",
-      "salary":"10000"
+      "salary": "10000"
     },
     {
       "id": 2,
       "name": "jay",
-      "salary":"9500"
+      "salary": "9500"
     },
     {
       "id": 3,
       "name": "neel",
-      "salary":"9000"
+      "salary": "9000"
     },
     {
       "id": 4,
       "name": "Rinkal",
-      "salary":"10500"
+      "salary": "10500"
+    }
+  ],
+  "bank": [
+    {
+      "id": 1,
+      "name": "Bhavik Gajdhar",
+      "acc_no": "123654789",
+      "email": "abc@gmail.com",
+      "phone": "15935756",
+      "bank_name": "SBI",
+      "gender": "male",
+      "address": "Bhagod",
+      "amount": "800",
+      "currency_code": "INR"
+    },
+    {
+      "name": "Jay Patel",
+      "acc_no": "4545646445",
+      "email": "j@gmail.com",
+      "phone": "7799644444",
+      "bank_name": "HDFC",
+      "gender": "male",
+      "address": "Bilimora",
+      "amount": "150000",
+      "currency_code": "INR",
+      "id": 8
     }
   ]
 }

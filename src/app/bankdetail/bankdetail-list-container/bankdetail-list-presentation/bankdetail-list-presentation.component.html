@@ -1,0 +1,54 @@
+<p>bankdetail-list-presentation works!</p>
+<div>
+    <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="add" routerLink='add'>
+        Add Bank Details
+      </button>
+
+      <input type="text" [(ngModel)]="searchText" placeholder="Search">
+      <!-- <input type="text"  [formControl]="search"  placeholder="Search by Name">  -->
+
+    <table class="table table-bordered" class="table" *ngIf="(bankdetailList | search: searchText).length > 0; else noResults" >
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Account No</th>
+            <th scope="col">Email</th>
+            <th scope="col">PhoneNo</th>
+            <th scope="col">Bank Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Address</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Currency Code</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <!-- <tbody *ngFor="let bankdetail of bankdetailList"> -->
+    <tbody > 
+        <tr *ngFor="let bankdetail of bankdetailList |search:searchText; let i=index">
+            <td> {{bankdetail.id}} </td>
+            <td> {{bankdetail.name}} </td>
+            <td> {{bankdetail.acc_no}} </td>
+            <td> {{bankdetail.email}} </td>
+            <td> {{bankdetail.phone}} </td>
+            <td> {{bankdetail.bank_name}} </td>
+            <td> {{bankdetail.gender}} </td>
+            <td> {{bankdetail.address}} </td>
+            <td> {{bankdetail.amount}} </td>
+            <td> {{bankdetail.currency_code}} </td>
+            <td class="text-center">
+                <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" (click)="getBankdetail(bankdetail.id)"
+                routerLink="/bankdetail/edit/{{bankdetail.id}}">
+                  Edit
+                </button>
+         
+                <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="Delete" (click)="deleteBankdetail(bankdetail.id)" >
+                  Delete
+                </button>
+        </tr>
+    </tbody>
+</table>
+  <ng-template #noResults>
+    <p>No results found for "{{searchText}}".</p>
+  </ng-template>
+</div>
