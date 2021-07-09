@@ -5,37 +5,35 @@ import { Bankdetail } from './bankdetail.model';
 
 @Injectable()
 export class BankdetailService {
-  
-   
   apiURL = 'http://localhost:3000/bank';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-
-//Get List of Bank Detail
-  public  getbankdetails():Observable<any> {
-    return this.http.get<any>(this.apiURL)
-    
+  //Get List of Bank Detail
+  public getBankdetails(): Observable<any> {
+    return this.http.get<any>(this.apiURL);
   }
 
-
-// Add Bank Detail
-  public addbankdetail(data:Bankdetail):Observable<Bankdetail> {
-    return this.http.post<Bankdetail>(this.apiURL,data);
-    
+  // Add Bank Detail
+  public addBankdetail(data: Bankdetail): Observable<Bankdetail> {
+    return this.http.post<Bankdetail>(this.apiURL, data);
   }
-// Fetch Data By Id 
-  public getBankDetailData(id:number):Observable<Bankdetail>{
-   debugger
-    return this.http.get<Bankdetail>(this.apiURL+'/'+id)
-   
-  } 
-  
-// Delete Bank Detail by ID
+
+  // Fetch Data By ID
+  public getBankDetailData(id: number): Observable<Bankdetail> {
+    return this.http.get<Bankdetail>(this.apiURL + '/' + id);
+  }
+
+  // Update Bank Detail By ID
+  public putBankDetailData(
+    id: number,
+    data: Bankdetail
+  ): Observable<Bankdetail> {
+    return this.http.put<Bankdetail>(this.apiURL + '/' + id, data);
+  }
+
+  // Delete Bank Detail By ID
   public deleteBankdetail(id: number) {
-    debugger
-    return this.http.delete<Bankdetail>(this.apiURL + '/' + id)
-
+    return this.http.delete<Bankdetail>(this.apiURL + '/' + id);
   }
-
 }

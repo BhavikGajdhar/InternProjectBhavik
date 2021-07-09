@@ -5,28 +5,28 @@ import { BankdetailListContainerComponent } from './bankdetail-list-container/ba
 import { BankdetailComponent } from './bankdetail.component';
 
 const routes: Routes = [
-                        { path: '', component: BankdetailComponent,
-                        children:[
-                          {
-                            path:'',
-                            component: BankdetailListContainerComponent
-                          },
-                          {
-                            path:'add',
-                            component: BankdetailFormContainerComponent
-                          },
-                          {
-                            path:'edit/:id',
-                            component: BankdetailFormContainerComponent
-                          }
-                        ]
-                      }
-
-
+  {
+    path: '',
+    component: BankdetailComponent,
+    children: [
+      {
+        path: '',
+        component: BankdetailListContainerComponent,
+      },
+      {
+        path: 'add',
+        component: BankdetailFormContainerComponent,
+      },
+      {
+        path: 'edit/:id',
+        component: BankdetailFormContainerComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class BankdetailRoutingModule { }
+export class BankdetailRoutingModule {}

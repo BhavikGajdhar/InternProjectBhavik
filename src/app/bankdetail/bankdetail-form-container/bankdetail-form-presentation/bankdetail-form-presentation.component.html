@@ -4,30 +4,30 @@
         
         <div class="col-md-9">
             <label for="name" class="form-label">Account Holder Name: </label>
-            <input type="text" class="form-control"  formControlName="name" id="name" >
+            <input type="text" class="form-control"  formControlName="name" id="name">
             <span class="error" *ngIf="!bankdetailForm.controls.name.valid && bankdetailForm.controls.name.touched" 
-            class="error"> Name is required</span>
+            class="text-danger"> Name is required</span>
         </div>
     
         <div class="col-md-9">
-            <label for="accountno" class="form-label">Account NO: </label>
+            <label for="accountno" class="form-label">Account No: </label>
             <input type="text" class="form-control"  formControlName = "acc_no" id="acc_no">
-            <span class="error" *ngIf="!bankdetailForm.controls.acc_no.valid && bankdetailForm.controls.acc_no.touched" 
-            class="error"> Account No is required</span>
+            <span class="errorr" *ngIf="!bankdetailForm.controls.acc_no.valid && bankdetailForm.controls.acc_no.touched" 
+            class="text-danger"> Account no is required</span>
         </div>
     
         <div class="col-md-9">
             <label for="email" class="form-label">Email: </label>
             <input type="text" class="form-control"  formControlName="email" id="email" >
             <span class="error" *ngIf="!bankdetailForm.controls.email.valid && bankdetailForm.controls.email.touched" 
-            class="error"> Email is required</span>
+            class="text-danger"> Email is required</span>
         </div>
     
         <div class="col-md-9">
             <label for="phoneno" class="form-label">Phone No: </label>
-            <input type="text" class="form-control"  formControlName="phone" id="phone">
+            <input type="text" class="form-control"  appPhoneMask formControlName="phone" id="phone">
             <span class="error" *ngIf="!bankdetailForm.controls.phone.valid && bankdetailForm.controls.phone.touched" 
-            class="error"> Phone Number is required</span>
+            class="text-danger"> Phone Number is required</span>
         </div>
     
         <div class="col-md-9">
@@ -40,18 +40,18 @@
                 <option>ICICI</option>
             </select>
             <span class="error" *ngIf="!bankdetailForm.controls.bank_name.valid && bankdetailForm.controls.bank_name.touched" 
-            class="error"> Please select the Bank </span>
+            class="text-danger"> Please select the Bank </span>
         </div>
     
         <div class="col-md-9">
             <label for="gender" class="form-label"> Gender </label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" id="male"  formControlName='gender' value="male" defualtchecked>
+                <input class="form-check-input" type="radio" name="gender" id="male"  formControlName='gender' value="Male" defualtchecked>
                 <label class="form-check-label" for="male"> Male
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender"  id="female" formControlName='gender'  value="female">
+                <input class="form-check-input" type="radio" name="gender"  id="female" formControlName='gender'  value="Female">
                 <label class="form-check-label" for="female"> Female
                 </label>
             </div>
@@ -64,14 +64,14 @@
             <label for="address" class="form-label">Address: </label>
             <input type="text" class="form-control"  formControlName='address' id="address">
             <span class="error" *ngIf="!bankdetailForm.controls.address.valid && bankdetailForm.controls.address.touched" 
-            class="error"> Address is required</span>
+            class="text-danger"> Address is required</span>
         </div>
     
         <div class="col-md-9">
             <label for="Amount" class="form-label">Basic Salary: </label>
-            <input type="text" class="form-control"  formControlName='amount' id="amount">
+            <input type="text" class="form-control"  formControlName='amount' id="amount" >
             <span class="error" *ngIf="!bankdetailForm.controls.amount.valid && bankdetailForm.controls.amount.touched" 
-            class="error"> Salary is required</span>
+            class="text-danger"> Salary is required</span>
         </div>
     
         
@@ -85,7 +85,7 @@
                 <option>CAD</option>
             </select>
             <span class="error" *ngIf="!bankdetailForm.controls.currency_code.valid && bankdetailForm.controls.currency_code.touched" 
-            class="error"> Currency is required</span>
+            class="text-danger"> Currency is required</span>
         </div>
         
         <div class="col-9">

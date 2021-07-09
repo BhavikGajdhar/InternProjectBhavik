@@ -55,28 +55,76 @@
   ],
   "bank": [
     {
-      "id": 1,
-      "name": "Bhavik Gajdhar",
+      "name": "BhavikGajdhar",
       "acc_no": "123654789",
       "email": "abc@gmail.com",
-      "phone": "15935756",
+      "phone": "(990) (450)-3997",
       "bank_name": "SBI",
-      "gender": "male",
+      "gender": "Male",
       "address": "Bhagod",
-      "amount": "800",
-      "currency_code": "INR"
+      "amount": "200001",
+      "currency_code": "INR",
+      "id": 1
     },
     {
-      "name": "Jay Patel",
+      "name": "NeilyPatel",
       "acc_no": "4545646445",
-      "email": "j@gmail.com",
-      "phone": "7799644444",
+      "email": "neily@gmail.com",
+      "phone": "(665) (597)-7777",
+      "bank_name": "ICICI",
+      "gender": "Female",
+      "address": "valsad",
+      "amount": "25000",
+      "currency_code": "CAD",
+      "id": 2
+    },
+    {
+      "name": "AshishPatel",
+      "acc_no": "8899556677",
+      "email": "ashish@gmail.com",
+      "phone": "(929) (656)-9999",
+      "bank_name": "BOB",
+      "gender": "Male",
+      "address": "Magod",
+      "amount": "10000",
+      "currency_code": "EURO",
+      "id": 3
+    },
+    {
+      "name": "JoyPatel",
+      "acc_no": "77882334456",
+      "email": "joy@gmail.com",
+      "phone": "(915) (286)-5555",
       "bank_name": "HDFC",
-      "gender": "male",
-      "address": "Bilimora",
+      "gender": "Male",
+      "address": "Atul",
+      "amount": "99999",
+      "currency_code": "USD",
+      "id": 4
+    },
+    {
+      "name": "JancyPatel",
+      "acc_no": "85469877777",
+      "email": "jancy@gmail.com",
+      "phone": "(995) (632)-1456",
+      "bank_name": "HDFC",
+      "gender": "Female",
+      "address": "Dived",
       "amount": "150000",
-      "currency_code": "INR",
-      "id": 8
+      "currency_code": "CAD",
+      "id": 5
+    },
+    {
+      "name": "Jarry",
+      "acc_no": "45455644546",
+      "email": "j@gmail.com",
+      "phone": "(322) (132)-1317",
+      "bank_name": "SBI",
+      "gender": "Female",
+      "address": "Pardi",
+      "amount": "456645",
+      "currency_code": "EURO",
+      "id": 6
     }
   ]
 }

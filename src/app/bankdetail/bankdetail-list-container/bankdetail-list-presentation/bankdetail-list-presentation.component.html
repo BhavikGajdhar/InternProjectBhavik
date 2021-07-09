@@ -7,7 +7,8 @@
       <input type="text" [(ngModel)]="searchText" placeholder="Search">
       <!-- <input type="text"  [formControl]="search"  placeholder="Search by Name">  -->
 
-    <table class="table table-bordered" class="table" *ngIf="(bankdetailList | search: searchText).length > 0; else noResults" >
+    <table class="table table-bordered" class="table" 
+    *ngIf="(bankdetailList | search: searchText).length > 0; else noResults" >
     <thead>
         <tr>
             <th scope="col">Id</th>
@@ -36,18 +37,20 @@
             <td> {{bankdetail.address}} </td>
             <td> {{bankdetail.amount}} </td>
             <td> {{bankdetail.currency_code}} </td>
-            <td class="text-center">
-                <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" (click)="getBankdetail(bankdetail.id)"
-                routerLink="/bankdetail/edit/{{bankdetail.id}}">
+            <td class="text-left">
+                <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" 
+                  routerLink="/bankdetail/edit/{{bankdetail.id}}">
                   Edit
                 </button>
          
-                <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="Delete" (click)="deleteBankdetail(bankdetail.id)" >
+                <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="Delete" 
+                 (click)="deleteBankdetail(bankdetail.id)" >
                   Delete
                 </button>
+            </td>
         </tr>
     </tbody>
-</table>
+  </table>
   <ng-template #noResults>
     <p>No results found for "{{searchText}}".</p>
   </ng-template>

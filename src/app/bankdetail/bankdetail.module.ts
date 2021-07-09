@@ -11,6 +11,7 @@ import { BankdetailService } from './bankdetail.service';
 import { BankdetailFormContainerComponent } from './bankdetail-form-container/bankdetail-form-container.component';
 import { BankdetailFormPresentationComponent } from './bankdetail-form-container/bankdetail-form-presentation/bankdetail-form-presentation.component';
 import { SearchPipe } from './bankdetail-list-container/bankdetail-list-presentation/search.pipe';
+import { PhoneMaskDirective } from './bankdetail-form-container/bankdetail-form-presentation/phone-mask.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchPipe } from './bankdetail-list-container/bankdetail-list-presenta
     BankdetailFormContainerComponent,
     BankdetailFormPresentationComponent,
     SearchPipe,
+    PhoneMaskDirective,
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,6 @@ import { SearchPipe } from './bankdetail-list-container/bankdetail-list-presenta
     FormsModule,
     HttpClientModule,
   ],
-
   providers: [BankdetailService],
 })
 export class BankdetailModule {}

@@ -12,12 +12,13 @@ export class BankdetailListContainerComponent implements OnInit {
   
 
   public bankdetailList$ : Observable<any> = of();
-  bankdetailList: any;
+  //bankdetailList: any;
 
   constructor(
     private bankdetailservice: BankdetailService
   ) {
-    this.bankdetailList$ = this.bankdetailservice.getbankdetails();
+
+    this.bankdetailList$ = this.bankdetailservice.getBankdetails();
    }
 
   ngOnInit(): void {
@@ -26,8 +27,8 @@ export class BankdetailListContainerComponent implements OnInit {
 
 
   public onDeleteId(id: number) {
-    debugger
-    this.bankdetailList$=this.bankdetailservice.deleteBankdetail(id)
+    
+    this.bankdetailList$ = this.bankdetailservice.deleteBankdetail(id)
   }
     
 }
