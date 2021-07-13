@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppParentComponent } from './app-parent/app-parent.component';
+import { DynamicTemplatingComponent } from './dynamic-templating/dynamic-templating.component';
 import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ForkjionComponent } from './forkjion/forkjion.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'rxjs-oparator', loadChildren: () => import('./rxjs-oparator/rxjs-oparator.module').then(m => m.RxjsOparatorModule) },
   { path: 'employeedetail', loadChildren: () => import('./employeedetail/employeedetail.module').then(m => m.EmployeedetailModule) },
   { path: 'forkjoin', component: ForkjionComponent},
+  { path: 'dynamic-templating', component: DynamicTemplatingComponent},
   { path: 'bankdetail', loadChildren: () => import('./bankdetail/bankdetail.module').then(m => m.BankdetailModule) },
   { path:'**',component:AppParentComponent},
 ];

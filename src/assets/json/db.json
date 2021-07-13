@@ -62,7 +62,7 @@
       "bank_name": "SBI",
       "gender": "Male",
       "address": "Bhagod",
-      "amount": "200001",
+      "amount": "20000",
       "currency_code": "INR",
       "id": 1
     },
@@ -113,18 +113,6 @@
       "amount": "150000",
       "currency_code": "CAD",
       "id": 5
-    },
-    {
-      "name": "Jarry",
-      "acc_no": "45455644546",
-      "email": "j@gmail.com",
-      "phone": "(322) (132)-1317",
-      "bank_name": "SBI",
-      "gender": "Female",
-      "address": "Pardi",
-      "amount": "456645",
-      "currency_code": "EURO",
-      "id": 6
     }
   ]
 }

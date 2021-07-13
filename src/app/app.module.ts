@@ -11,12 +11,14 @@ import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForkjionComponent } from './forkjion/forkjion.component';
+import { DynamicTemplatingComponent } from './dynamic-templating/dynamic-templating.component';
 @NgModule({
   declarations: [
     AppComponent,
     AppChildComponent,
     AppParentComponent,
-    ForkjionComponent
+    ForkjionComponent,
+    DynamicTemplatingComponent
   ],
   imports: [
     BrowserModule,
