@@ -1,5 +1,8 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { Bankdetail } from '../../bankdetail.model';
+import { BankdetailService } from '../../bankdetail.service';
 import { BankdetailListPresenterService } from '../bankdetail-list-presenter/bankdetail-list-presenter.service';
 
 @Component({
@@ -9,10 +12,12 @@ import { BankdetailListPresenterService } from '../bankdetail-list-presenter/ban
   changeDetection:ChangeDetectionStrategy.OnPush,
   viewProviders:[BankdetailListPresenterService]
 })
-export class BankdetailListPresentationComponent implements OnInit {
+export class BankdetailListPresentationComponent implements OnInit,AfterViewInit {
 
 
   searchText!: string;
+  @ViewChild('Form')
+  Form!: NgForm;
   
   @Input() public set bankdetailList(id: Bankdetail[]){
     if(id){
@@ -29,7 +34,8 @@ export class BankdetailListPresentationComponent implements OnInit {
   private _bankdetailList: Bankdetail[] = [];
   
   constructor(
-    private bankdetailListPresenter: BankdetailListPresenterService
+    private bankdetailListPresenter: BankdetailListPresenterService,
+    private api:BankdetailService
   ) {
     this.bankdetailList = [];
     
@@ -42,6 +48,17 @@ export class BankdetailListPresentationComponent implements OnInit {
       });
 
     }
+  }
+  ngAfterViewInit():void{
+    const inForm =this.Form.valueChanges;
+    inForm!.pipe(
+      
+      map(data=>data.search),
+      debounceTime(1000),
+      switchMap(res=>this.api.getSearch(res))
+      )
+    .subscribe(res=>{
+     this.bankdetailList=res})
   }
  
   public deleteBankdetail(id: number) {

@@ -4,11 +4,17 @@
         Add Bank Details
       </button>
 
-      <input type="text" [(ngModel)]="searchText" placeholder="Search">
+      <form #Form="ngForm" >
+        <div>
+              <input type="text"  name="search"  class="form-control" [(ngModel)]="searchText" placeholder="Searching name">
+        </div>
+        </form>
+
+      <!-- <input type="text" [(ngModel)]="searchText" placeholder="Search"> -->
       <!-- <input type="text"  [formControl]="search"  placeholder="Search by Name">  -->
 
     <table class="table table-bordered" class="table" 
-    *ngIf="(bankdetailList | search: searchText).length > 0; else noResults" >
+    *ngIf="(bankdetailList).length > 0; else noResults" >
     <thead>
         <tr>
             <th scope="col">Id</th>
@@ -20,13 +26,13 @@
             <th scope="col">Gender</th>
             <th scope="col">Address</th>
             <th scope="col">Amount</th>
-            <th scope="col">Currency Code</th>
+            <!-- <th scope="col">Currency Code</th> -->
             <th scope="col">Action</th>
         </tr>
     </thead>
     <!-- <tbody *ngFor="let bankdetail of bankdetailList"> -->
     <tbody > 
-        <tr *ngFor="let bankdetail of bankdetailList |search:searchText; let i=index">
+        <tr *ngFor="let bankdetail of bankdetailList ; let i=index">
             <td> {{bankdetail.id}} </td>
             <td> {{bankdetail.name}} </td>
             <td> {{bankdetail.acc_no}} </td>
@@ -35,8 +41,8 @@
             <td> {{bankdetail.bank_name}} </td>
             <td> {{bankdetail.gender}} </td>
             <td> {{bankdetail.address}} </td>
-            <td> {{bankdetail.amount}} </td>
-            <td> {{bankdetail.currency_code}} </td>
+            <td> {{bankdetail.currency_code +' '+ bankdetail.amount}} </td>
+            <!-- <td> {{bankdetail.currency_code}} </td> -->
             <td class="text-left">
                 <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" 
                   routerLink="/bankdetail/edit/{{bankdetail.id}}">

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'forkjoin', component: ForkjionComponent},
   { path: 'dynamic-templating', component: DynamicTemplatingComponent},
   { path: 'bankdetail', loadChildren: () => import('./bankdetail/bankdetail.module').then(m => m.BankdetailModule) },
+  { path: 'dynamic-component', loadChildren: () => import('./dynamic-component/dynamic-component.module').then(m => m.DynamicComponentModule) },
   { path:'**',component:AppParentComponent},
 ];
 

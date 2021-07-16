@@ -1,23 +1,25 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { EmployeeService } from './employee.service';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css'],
 })
-export class EmployeeComponent implements OnInit {
-  @ViewChild('el') span:ElementRef | undefined;
-  el: any;
+export class EmployeeComponent implements OnInit,AfterViewInit {
 
-  
-  constructor() {}
+  @ViewChild('el', { static: false })
+  el!: ElementRef;
 
-  ngOnInit(): void {}
+  constructor(private ren: Renderer2) {}
 
-  public  myFunction() {
-   //console.log('add');
-   //el.classList.add('mystyle');
-   this.el.nativeElement.setAttribute('mystyle','');
+  ngOnInit():void{
+
+  }
+  ngAfterViewInit(){
+    this.ren.addClass(this.el.nativeElement,'mystyle');
+  }
+  public myFunction() {
+    console.log(this.el.nativeElement)
+    this.ren.removeClass(this.el.nativeElement,'mystyle');
   }
 }

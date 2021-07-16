@@ -13,6 +13,11 @@ export class BankdetailService {
   public getBankdetails(): Observable<any> {
     return this.http.get<any>(this.apiURL);
   }
+  // Searching field 
+  getSearch(search: string):Observable<any>{
+    
+    return this.http.get<any>(this.apiURL+'?q='+search)
+  }
 
   // Add Bank Detail
   public addBankdetail(data: Bankdetail): Observable<Bankdetail> {

@@ -11,24 +11,18 @@ import { BankdetailService } from '../bankdetail.service';
 export class BankdetailFormContainerComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
 
-  public bankdetailDataById$ : Observable<any> = of();
+  public bankdetailDataById$: Observable<any> = of();
   constructor(
     private restApi: BankdetailService,
     private actRoute: ActivatedRoute
-  ) {
-   
-  }
+  ) {}
 
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void {}
 
   public addbankdetail(bankData: any) {
+    debugger
     if (this.id) {
-      this.restApi
-        .putBankDetailData(this.id, bankData)
-        .subscribe();
+      this.restApi.putBankDetailData(this.id, bankData).subscribe();
     } else {
       this.restApi.addBankdetail(bankData).subscribe();
     }

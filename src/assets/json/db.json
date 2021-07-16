@@ -63,7 +63,7 @@
       "gender": "Male",
       "address": "Bhagod",
       "amount": "20000",
-      "currency_code": "INR",
+      "currency_code": "₹",
       "id": 1
     },
     {
@@ -75,7 +75,7 @@
       "gender": "Female",
       "address": "valsad",
       "amount": "25000",
-      "currency_code": "CAD",
+      "currency_code": "C$",
       "id": 2
     },
     {
@@ -87,7 +87,7 @@
       "gender": "Male",
       "address": "Magod",
       "amount": "10000",
-      "currency_code": "EURO",
+      "currency_code": "€",
       "id": 3
     },
     {
@@ -99,7 +99,7 @@
       "gender": "Male",
       "address": "Atul",
       "amount": "99999",
-      "currency_code": "USD",
+      "currency_code": "$",
       "id": 4
     },
     {
@@ -107,12 +107,36 @@
       "acc_no": "85469877777",
       "email": "jancy@gmail.com",
       "phone": "(995) (632)-1456",
-      "bank_name": "HDFC",
+      "bank_name": "ICICI",
       "gender": "Female",
       "address": "Dived",
       "amount": "150000",
-      "currency_code": "CAD",
+      "currency_code": "C$",
       "id": 5
+    },
+    {
+      "name": "SangamPatel",
+      "acc_no": "8564789555",
+      "email": "sp@gmail.com",
+      "phone": "(986) (547)-2315",
+      "bank_name": "ICICI",
+      "gender": "Male",
+      "address": "Bhagod",
+      "amount": "15000",
+      "currency_code": "$",
+      "id": 6
+    },
+    {
+      "name": "JarryPatel",
+      "acc_no": "56446545",
+      "email": "neel@gmail.com",
+      "phone": "(999) (999)-9999",
+      "bank_name": "SBI",
+      "gender": "Female",
+      "address": "valsad",
+      "amount": "20000",
+      "currency_code": "₹",
+      "id": 7
     }
   ]
 }

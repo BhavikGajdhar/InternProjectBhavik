@@ -28,14 +28,21 @@ export class BankdetailFormPresenterService {
 
   public bankdetail(bankdetailForm: FormGroup) {
     if (bankdetailForm.valid) {
-      console.log('done');
       this.bankdetailData.next(bankdetailForm.value);
-      console.log(this.bankdetail);
-    } else {
-    }
+    } 
   }
-  // public bankdetailDataById(){
-    
-  // }
+  // pipe(map((res)=>{
+  //   let check=this.bankdetailForm.get('gender')?.value;
+  //   if(check=='Female'){
+  //     debugger
+  //     let data =res.amount*20/100
+  //     debugger
+  //     res.amount=res.amount+data;
+  //   }else{
+  //     debugger
+  //     res.amount;
+      
+  //   }
+  // }))
   
 }
