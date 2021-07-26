@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentFactoryResolver, ElementRef, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {ComponentPortal, DomPortal, Portal, TemplatePortal} from '@angular/cdk/portal';
 @Component({
@@ -9,6 +9,8 @@ import {ComponentPortal, DomPortal, Portal, TemplatePortal} from '@angular/cdk/p
 })
 export class ExampleCdkComponent implements OnInit,AfterViewInit {
 
+  
+
   @ViewChild('templatePortalContent') templatePortalContent!: TemplateRef<any>;
   @ViewChild('domPortalContent') domPortalContent!: ElementRef<HTMLElement> ;
 
@@ -17,7 +19,10 @@ export class ExampleCdkComponent implements OnInit,AfterViewInit {
   templatePortal!: TemplatePortal<any> ;
   domPortal!: DomPortal<any>; 
 
-  constructor(private _viewContainerRef: ViewContainerRef) { }
+  isOpen = false;
+
+  constructor(private _viewContainerRef: ViewContainerRef,
+    private componentFactoryResolver: ComponentFactoryResolver) { }
  
   ngOnInit(): void {
   }
@@ -57,6 +62,14 @@ export class ExampleCdkComponent implements OnInit,AfterViewInit {
                         event.previousIndex,
                         event.currentIndex);
     }
+  }
+  showcomponent(){
+    debugger
+    // this._viewContainerRef.clear();
+    // let component: any = true ,ResourcesComponent:any;
+    return this._viewContainerRef.createComponent(
+      this.componentFactoryResolver.resolveComponentFactory(ExampleCdkComponent)
+    );
   }
 
 }

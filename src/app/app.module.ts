@@ -14,6 +14,7 @@ import { ComponentPortalExample, ExampleCdkComponent } from './example-cdk/examp
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { OverlayModule } from '@angular/cdk/overlay';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     DragDropModule,
     PortalModule,
     ScrollingModule,
+    OverlayModule
     
   ],
   entryComponents: [ExampleCdkComponent, ComponentPortalExample],
