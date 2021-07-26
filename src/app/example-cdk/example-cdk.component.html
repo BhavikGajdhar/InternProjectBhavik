@@ -1,0 +1,46 @@
+<p>example-cdk works!</p>
+
+<div class="example-container">
+    <h2>To do</h2>
+  
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+  
+  <div class="example-container">
+    <h2>Done</h2>
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+<h2>The portal outlet is below:</h2>
+<div class="example-portal-outlet">
+  <ng-template [cdkPortalOutlet]="selectedPortal"></ng-template>
+</div>
+<ng-template #templatePortalContent>Hello, this is a template portal</ng-template>
+
+<button (click)="selectedPortal = componentPortal">Render component portal</button>
+<button (click)="selectedPortal = templatePortal">Render template portal</button>
+<button (click)="selectedPortal = domPortal">Render DOM portal</button>
+
+<div #domPortalContent>Hello, this is a DOM portal</div> 
+
+
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+    <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+</cdk-virtual-scroll-viewport>

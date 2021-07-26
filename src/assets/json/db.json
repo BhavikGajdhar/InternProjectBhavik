@@ -57,7 +57,7 @@
     {
       "name": "BhavikGajdhar",
       "acc_no": "123654789",
-      "email": "abc@gmail.com",
+      "email": "bhavik007@gmail.com",
       "phone": "(990) (450)-3997",
       "bank_name": "SBI",
       "gender": "Male",
@@ -73,7 +73,7 @@
       "phone": "(665) (597)-7777",
       "bank_name": "ICICI",
       "gender": "Female",
-      "address": "valsad",
+      "address": "Valsad",
       "amount": "25000",
       "currency_code": "C$",
       "id": 2
@@ -125,18 +125,6 @@
       "amount": "15000",
       "currency_code": "$",
       "id": 6
-    },
-    {
-      "name": "JarryPatel",
-      "acc_no": "56446545",
-      "email": "neel@gmail.com",
-      "phone": "(999) (999)-9999",
-      "bank_name": "SBI",
-      "gender": "Female",
-      "address": "valsad",
-      "amount": "20000",
-      "currency_code": "₹",
-      "id": 7
     }
   ]
 }

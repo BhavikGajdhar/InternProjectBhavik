@@ -15,21 +15,20 @@ export class ResourcesComponent implements OnInit {
   constructor(private fb: FormBuilder) {
     this.userForm= this.fb.group({
       username: ['',[Validators.required,Validators.pattern('[A-Za-z]{1,32}')]],
-      rollNo: ['',Validators.required],        //[ Validators.pattern('^[0-9]?$')]],
-      address: ['',Validators.required],       //[Validators.pattern('^[A-Za-z \-]*$')]
-      // address: this.fb.group({}),
+      rollNo: ['',Validators.required],        
+      address: ['',Validators.required],       
       skill: this.fb.array([
-        this.fb.control('')
+        this.addressFormGroup()
       ])
     })
 
   }
 
-  // public addressFormGroup(): FormGroup {
-  //   return this.fb.group({
-  //     skill: ['', Validators.required],
-  //   })
-  // }
+  public addressFormGroup(): FormGroup {
+    return this.fb.group({
+      skill: ['', Validators.required],
+    })
+  }
 
   ngOnInit(): void {
 
@@ -40,7 +39,7 @@ export class ResourcesComponent implements OnInit {
   }
 
   public onAddSkill(){
-    this.skill.push(this.fb.control(''));
+    this.skill.push(this.addressFormGroup());
   }
 
   public onDeleteSkill(index : number){
