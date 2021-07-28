@@ -1,0 +1,36 @@
+<p>employeedetail-list-presentation works!</p>
+<button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="add" routerLink='add'>
+    Add Employee
+</button>
+  
+  <table class="table table-stripede border border-secondary ">
+      <thead class="thead-light">
+        <th scope="col">Emp_Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+        <th scope="col">isGreaterSalary</th>
+        <th scope="col" class="text-center">Action</th>
+      </thead>
+      <!-- <tbody > -->
+      <tbody *ngFor="let employeeListItem of employeeList">
+        <tr [style.background]="(employeeListItem.salary >= 10000 )? 'skyblue':'white'">
+        <!-- <tr *ngFor="let employeeListItem of employeeList"> -->
+          <td>{{employeeListItem.id}}</td>
+          <td>{{employeeListItem.name}}</td>
+          <td>{{employeeListItem.salary}}</td>
+          <td> {{(employeeListItem.salary >= 10000 )? 'True':'False'}}</td>
+
+          <td class="text-center">
+            <!-- <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" [routerLink]="['/product/edit/']+customer.id">
+              edit
+            </button> -->
+    
+            <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="Delete" (click)="deleteEmployee(employeeListItem.id)">
+              delete
+            </button>
+            
+          </td>
+        </tr>
+    
+      </tbody>
+  </table>

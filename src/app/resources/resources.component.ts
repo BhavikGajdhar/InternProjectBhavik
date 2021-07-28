@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-resources',
@@ -8,36 +8,46 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 })
 export class ResourcesComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  public userForm : FormGroup;
+  public skills:FormArray[]=[];
+
+
+  constructor(private fb: FormBuilder) {
+    this.userForm= this.fb.group({
+      username: ['',[Validators.required,Validators.pattern('[A-Za-z]{1,32}')]],
+      rollNo: ['',Validators.required],        
+      address: ['',Validators.required],       
+      skill: this.fb.array([
+        this.addressFormGroup()
+      ])
+    })
+
+  }
+
+  public addressFormGroup(): FormGroup {
+    return this.fb.group({
+      skill: ['', Validators.required],
+    })
+  }
 
   ngOnInit(): void {
 
   }
-  
-  userForm= this.fb.group({
-    username: ['',Validators.required,Validators.pattern('^[A-Za-z \-]*$')],
-    rollNo: [''],        //[ Validators.pattern('^[0-9]?$')]],
-    address: [''],       //[Validators.pattern('^[A-Za-z \-]*$')]
-    // address: this.fb.group({}),
-    skill: this.fb.array([
-      this.fb.control('')
-    ])
-  });
-
+    
   get skill(){
     return this.userForm.get('skill') as FormArray
   }
 
-  onAddSkill(){
-    this.skill.push(this.fb.control(''));
+  public onAddSkill(){
+    this.skill.push(this.addressFormGroup());
   }
 
-  onDeleteSkill(index:number){
+  public onDeleteSkill(index : number){
     const deleteSkillItem = this.userForm.get('skill') as FormArray;
-    deleteSkillItem.removeAt(index=1);
+    deleteSkillItem.removeAt(index);
   }
 
-  onSubmit(value:any){
-    console.log(value);
+ public  onSubmit(){
+    console.log(this.userForm.value);
   }
 }

@@ -7,12 +7,14 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { RouterModule } from '@angular/router';
 import { EmployeeService } from './employee.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './add-employee/filter.pipe';
 
 
 @NgModule({
   declarations: [
      EmployeeComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -26,10 +28,5 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ]
 })
 export class EmployeeModule {
-  // id : number = 0;
-  // studentName : string='';
-  //  roll_no : string='';
-  //  address : string ='';
-  //  skills : string ='';
-
+  
  }

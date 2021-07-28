@@ -1,0 +1,29 @@
+<p>forkjion works!</p>
+<div class="mb-3 row">
+  <div class="col-md-3 pr-4">
+    <strong>Select Name</strong>
+    <select class="form-select" aria-label="Default select example" #name>
+      <option *ngFor="let item of Names" #value>{{ item }}</option>
+    </select>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-md-3 pr-4">
+      <strong>Select Color</strong>
+      <select class="form-select" aria-label="Default select example" #color>
+        <option *ngFor="let item of Colors">{{ item }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-9 ml-auto">
+  <strong>Zip</strong>
+  <hr />
+  <div class="wrapper" id="elcontanier1"></div>
+</div>
+<br />
+<div class="col-md-9 ml-auto">
+  <strong>ForkJoin</strong>
+  <hr />
+  <div class="wrapper" id="elcontanier2"></div>
+</div>

@@ -19,12 +19,12 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
      this.restApi.loadPublicData().subscribe((res)=>{
      this.Public  = res.map((data:any) => data =( data.name +'--in--'+ data.design))
-     // this.Public = data;
-      console.log(this.Public);
+     // this.Public = res;
+      
     })
-    setTimeout(() => {
-    this.Public.unsubscribe();
-  }, 3000);
+  //   setTimeout(() => {
+  //   this.Public.unsubscribe();
+  // }, 10000);
 
   }
 

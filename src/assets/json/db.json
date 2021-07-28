@@ -2,7 +2,7 @@
   "employees": [
     {
       "id": 17,
-      "name": "Jay Patel",
+      "name": "Jay H. Patel",
       "design": "Java",
       "address": "Bilimora"
     },
@@ -29,6 +29,102 @@
       "name": "Hiren Tandel",
       "design": "Angular",
       "address": "Valsad"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "ashish",
+      "salary": "10000"
+    },
+    {
+      "id": 2,
+      "name": "jay",
+      "salary": "9500"
+    },
+    {
+      "id": 3,
+      "name": "neel",
+      "salary": "9000"
+    },
+    {
+      "id": 4,
+      "name": "Rinkal",
+      "salary": "10500"
+    }
+  ],
+  "bank": [
+    {
+      "name": "BhavikGajdhar",
+      "acc_no": "123654789",
+      "email": "bhavik007@gmail.com",
+      "phone": "(990) (450)-3997",
+      "bank_name": "SBI",
+      "gender": "Male",
+      "address": "Bhagod",
+      "amount": "20000",
+      "currency_code": "₹",
+      "id": 1
+    },
+    {
+      "name": "NeilyPatel",
+      "acc_no": "4545646445",
+      "email": "neily@gmail.com",
+      "phone": "(665) (597)-7777",
+      "bank_name": "ICICI",
+      "gender": "Female",
+      "address": "Valsad",
+      "amount": "25000",
+      "currency_code": "C$",
+      "id": 2
+    },
+    {
+      "name": "AshishPatel",
+      "acc_no": "8899556677",
+      "email": "ashish@gmail.com",
+      "phone": "(929) (656)-9999",
+      "bank_name": "BOB",
+      "gender": "Male",
+      "address": "Magod",
+      "amount": "10000",
+      "currency_code": "€",
+      "id": 3
+    },
+    {
+      "name": "JoyPatel",
+      "acc_no": "77882334456",
+      "email": "joy@gmail.com",
+      "phone": "(915) (286)-5555",
+      "bank_name": "HDFC",
+      "gender": "Male",
+      "address": "Atul",
+      "amount": "99999",
+      "currency_code": "$",
+      "id": 4
+    },
+    {
+      "name": "JancyPatel",
+      "acc_no": "85469877777",
+      "email": "jancy@gmail.com",
+      "phone": "(995) (632)-1456",
+      "bank_name": "ICICI",
+      "gender": "Female",
+      "address": "Dived",
+      "amount": "150000",
+      "currency_code": "C$",
+      "id": 5
+    },
+    {
+      "name": "SangamPatel",
+      "acc_no": "8564789555",
+      "email": "sp@gmail.com",
+      "phone": "(986) (547)-2315",
+      "bank_name": "ICICI",
+      "gender": "Male",
+      "address": "Bhagod",
+      "amount": "15000",
+      "currency_code": "$",
+      "id": 6
     }
   ]
 }
