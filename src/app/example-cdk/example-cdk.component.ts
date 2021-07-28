@@ -64,7 +64,6 @@ export class ExampleCdkComponent implements OnInit,AfterViewInit {
     }
   }
   showcomponent(){
-    debugger
     // this._viewContainerRef.clear();
     // let component: any = true ,ResourcesComponent:any;
     return this._viewContainerRef.createComponent(

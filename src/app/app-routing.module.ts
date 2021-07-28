@@ -21,6 +21,8 @@ const routes: Routes = [
   { path: 'example-cdk', component: ExampleCdkComponent},
   { path: 'bankdetail', loadChildren: () => import('./bankdetail/bankdetail.module').then(m => m.BankdetailModule) },
   { path: 'dynamic-component', loadChildren: () => import('./dynamic-component/dynamic-component.module').then(m => m.DynamicComponentModule) },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
+ 
   { path:'**',component:AppParentComponent},
 ];
 

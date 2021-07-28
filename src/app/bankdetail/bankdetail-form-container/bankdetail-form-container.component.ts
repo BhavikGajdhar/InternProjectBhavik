@@ -9,7 +9,7 @@ import { BankdetailService } from '../bankdetail.service';
   styleUrls: ['./bankdetail-form-container.component.css'],
 })
 export class BankdetailFormContainerComponent implements OnInit {
-  id = this.actRoute.snapshot.params['id'];
+ id = this.actRoute.snapshot.params['id'];
 
   public bankdetailDataById$: Observable<any> = of();
   constructor(

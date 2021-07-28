@@ -1,0 +1,59 @@
+<p>user-form-presentation works!</p>
+<div class="container">
+    <form class="row" [formGroup]="userForm">
+        
+        <div class="col-md-9">
+            <label for="name" class="form-label">FIRST NAME: </label>
+            <input type="text" class="form-control"  formControlName="firstname" id="firstname">
+            <span class="error" *ngIf="!userForm.controls.firstname.valid && userForm.controls.firstname.touched" 
+            class="text-danger"> First Name is required</span>
+        </div>
+    
+        <div class="col-md-9">
+            <label for="accountno" class="form-label">LAST NAME: </label>
+            <input type="text" class="form-control"  formControlName = "lastname" id="lastname">
+            <span class="errorr" *ngIf="!userForm.controls.lastname.valid && userForm.controls.lastname.touched" 
+            class="text-danger"> Last Name is required</span>
+        </div>
+        <div class="col-md-9">
+            <label for="accountno" class="form-label">EMAIL: </label>
+            <input type="text" class="form-control"  formControlName = "email" id="email">
+            <span class="errorr" *ngIf="!userForm.controls.email.valid && userForm.controls.email.touched" 
+            class="text-danger"> Email is required</span>
+        </div>
+        <div class="col-md-9">
+            <label for="phoneno" class="form-label">CONTACT NUMBER: </label>
+            <input type="text" class="form-control"  appPhoneMask formControlName="contactnumber" id="contactnumber">
+            <span class="error" *ngIf="!userForm.controls.contactnumber.valid && userForm.controls.contactnumber.touched" 
+            class="text-danger"> Phone Number is required</span>
+        </div>
+        <div class="col-md-9">
+            <label for="clientname" class="form-label">CLIENT NAME: </label>
+            <select class="form-select" id="clientname"  formControlName="clientname" >
+                <option selected disabled value="">Choose...</option>
+                <option>Apple</option>
+                <option>JBL</option>
+                <option>1Rivet</option>
+                <option>Boat</option>
+            </select>
+            <span class="error" *ngIf="!userForm.controls.clientname.valid && userForm.controls.clientname.touched" 
+            class="text-danger"> Please select the Client </span>
+        </div>
+        <div class="col-md-9">
+            <label for="office" class="form-label">OFFICE: </label>
+            <select class="form-select" id="office"  formControlName="office" >
+                <option selected disabled value="">Choose...</option>
+                <option>Office1</option>
+                <option>Office2</option>
+                <option>Office3</option>
+                <option>Office4</option>
+            </select>
+            <span class="error" *ngIf="!userForm.controls.office.valid && userForm.controls.office.touched" 
+            class="text-danger"> Please select the Office </span>
+        </div>
+        
+        <div class="col-9">
+            <button class="btn btn-primary" type="submit" routerLink="/user" [disabled]="!userForm.valid" (click)="onSubmit()">Submit form</button>
+        </div>
+    </form>
+</div>

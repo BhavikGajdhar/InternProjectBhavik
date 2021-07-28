@@ -119,12 +119,41 @@
       "acc_no": "8564789555",
       "email": "sp@gmail.com",
       "phone": "(986) (547)-2315",
-      "bank_name": "ICICI",
+      "bank_name": "BOB",
       "gender": "Male",
       "address": "Bhagod",
       "amount": "15000",
       "currency_code": "$",
       "id": 6
+    }
+  ],
+  "user": [
+    {
+      "firstname": "Sangam",
+      "lastname": "Patel",
+      "clientname": "1Rivet",
+      "email": "sp@gmail.com",
+      "office": "Office1",
+      "contactnumber": "986-547-2318",
+      "id": 1
+    },
+    {
+      "firstname": "Bhavik",
+      "lastname": "Gajdhar",
+      "clientname": "Apple",
+      "email": "neel@gmail.com",
+      "office": "Office2",
+      "contactnumber": "990-450-3997",
+      "id": 3
+    },
+    {
+      "firstname": "Ashish",
+      "lastname": "Patel",
+      "clientname": "1Rivet",
+      "email": "ab@gmail.com",
+      "office": "Office3",
+      "contactnumber": "555-555-5555",
+      "id": 4
     }
   ]
 }

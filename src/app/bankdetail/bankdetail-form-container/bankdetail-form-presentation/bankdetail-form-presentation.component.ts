@@ -52,7 +52,14 @@ export class BankdetailFormPresentationComponent implements OnInit {
   }
 
   public onSubmit() {
-    this.BankdetailFormPresenter.bankdetail(this.bankdetailForm);
+    if(this.id){
+      debugger
+     this.BankdetailFormPresenter.bankdetail(this.bankdetailForm)
+    }else{
+      debugger
+      this.BankdetailFormPresenter.bankdetail(this.bankdetailForm);
+    }
+    
   }
  
 }
