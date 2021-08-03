@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { User } from '../../user.model';
 import { UserService } from '../../user.service';
 import { UserFormPresenterService } from '../user-form-presenter/user-form-presenter.service';
 
@@ -13,20 +14,24 @@ import { UserFormPresenterService } from '../user-form-presenter/user-form-prese
 })
 export class UserFormPresentationComponent implements OnInit {
 
-  id = this.actRoute.snapshot.params['id'];
+  
+  private _userIdData: User[] = [];
+  @Input() public set UserDataById(id: User[]){
+    if(id){
+      this._userIdData = id
+      this.userForm.patchValue(this.UserDataById)
+    }
+  }
+
+  public get UserDataById(): User[] {
+    return this._userIdData
+  }
 
   @Output() userData = new EventEmitter();
   public userForm: FormGroup = this.userFormPresenter.bindForm();
 
-  constructor( private userFormPresenter: UserFormPresenterService,
-                private actRoute: ActivatedRoute,
-                private resApi: UserService
-    ) {
-      if (this.id) {
-        this.resApi.getUserData(this.id).subscribe((res: any) => {
-          this.userForm.patchValue(res);
-        });
-      }
+  constructor( private userFormPresenter: UserFormPresenterService) {
+    this.UserDataById=[]
      }
 
   ngOnInit(): void {
@@ -35,14 +40,7 @@ export class UserFormPresentationComponent implements OnInit {
     });
   }
   public onSubmit() {
-    if(this.id){
-      debugger
-     this.userFormPresenter.user(this.userForm)
-    }else{
-      debugger
-      this.userFormPresenter.user(this.userForm);
-    }
-    
+    this.userFormPresenter.user(this.userForm) 
   }
 
 }

@@ -1,2 +1,3 @@
 <p>user-form-container works!</p>
-<app-user-form-presentation (userData)="adduser($event)"></app-user-form-presentation>
+<app-user-form-presentation (userData)="adduser($event)"
+[UserDataById]="userDataById$ | async"></app-user-form-presentation>

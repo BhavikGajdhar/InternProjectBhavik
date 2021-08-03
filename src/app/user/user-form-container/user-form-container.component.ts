@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, of } from 'rxjs';
 import { UserService } from '../user.service';
 
 @Component({
@@ -11,13 +12,16 @@ export class UserFormContainerComponent implements OnInit {
   
   id = this.actRoute.snapshot.params['id'];
 
+  public userDataById$: Observable<any> = of();
+
   constructor( private restApi: UserService,
-    private actRoute: ActivatedRoute) { }
+    private actRoute: ActivatedRoute) { 
+      this.userDataById$ = this.restApi.getUserData(this.id);
+    }
 
   ngOnInit(): void {
   }
   public adduser(userData: any) {
-    debugger
     if (this.id) {
       this.restApi.putUserData(this.id, userData).subscribe();
     } else {

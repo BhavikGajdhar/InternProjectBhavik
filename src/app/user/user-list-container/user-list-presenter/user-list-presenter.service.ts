@@ -18,4 +18,12 @@ export class UserListPresenterService {
     this.userId.next(id);
     
   }
+  public order(order: string): string {
+    debugger
+    if (order === 'asc') {
+      return 'desc';
+    } else {
+      return 'asc';
+    }
+  }
 }

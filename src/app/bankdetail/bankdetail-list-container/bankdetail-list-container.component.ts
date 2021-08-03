@@ -12,12 +12,10 @@ export class BankdetailListContainerComponent implements OnInit {
   
 
   public bankdetailList$ : Observable<any> = of();
-  //bankdetailList: any;
 
   constructor(
     private bankdetailservice: BankdetailService
   ) {
-
     this.bankdetailList$ = this.bankdetailservice.getBankdetails();
    }
 

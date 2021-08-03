@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentFactoryResolver, ElementRef, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {ComponentPortal, DomPortal, Portal, TemplatePortal} from '@angular/cdk/portal';
+import { ResourcesComponent } from '../resources/resources.component';
 @Component({
   selector: 'app-example-cdk',
   templateUrl: './example-cdk.component.html',
@@ -15,7 +16,7 @@ export class ExampleCdkComponent implements OnInit,AfterViewInit {
   @ViewChild('domPortalContent') domPortalContent!: ElementRef<HTMLElement> ;
 
   selectedPortal!: Portal<any> ;
-  componentPortal!: ComponentPortal<ComponentPortalExample>;
+  componentPortal!: ComponentPortal<ResourcesComponent>;
   templatePortal!: TemplatePortal<any> ;
   domPortal!: DomPortal<any>; 
 
@@ -28,7 +29,7 @@ export class ExampleCdkComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.componentPortal = new ComponentPortal(ComponentPortalExample);
+    this.componentPortal = new ComponentPortal(ResourcesComponent);
     this.templatePortal = new TemplatePortal(
       this.templatePortalContent,
       this._viewContainerRef

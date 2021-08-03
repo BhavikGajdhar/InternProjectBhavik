@@ -1,6 +1,7 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentFactoryResolver, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { debounceTime, map, switchMap } from 'rxjs/operators';
+import { UserFormContainerComponent } from '../../user-form-container/user-form-container.component';
 import { User } from '../../user.model';
 import { UserService } from '../../user.service';
 import { UserListPresenterService } from '../user-list-presenter/user-list-presenter.service';
@@ -17,6 +18,11 @@ export class UserListPresentationComponent implements OnInit,AfterViewInit {
   searchText!: string;
   @ViewChild('Form')
   Form!: NgForm;
+  public page = 1;
+  public pageSize = 10;
+  public  reverse!: boolean;
+  public orderType!: string;
+  public key!: string;
 
   @Input() public set userList(id: User[]){
     if(id){
@@ -27,12 +33,15 @@ export class UserListPresentationComponent implements OnInit,AfterViewInit {
   public get userList(): User[] {
     return this._userList
   }
+  @Output() public sort: EventEmitter<any>=new EventEmitter();
   @Output() public deleteId:EventEmitter<any> = new EventEmitter();
  
   private _userList: User[] = [];
 
   constructor(private UserListPresenter:UserListPresenterService,
-    private api:UserService
+    private api:UserService,
+    private _viewContainerRef: ViewContainerRef,
+    private componentFactoryResolver: ComponentFactoryResolver
     ) { 
     this._userList=[];
   }
@@ -43,6 +52,7 @@ export class UserListPresentationComponent implements OnInit,AfterViewInit {
       this.deleteId.emit(userId);
     });
    }
+  
   }
   ngAfterViewInit():void{
     const inForm =this.Form.valueChanges;
@@ -59,5 +69,20 @@ export class UserListPresentationComponent implements OnInit,AfterViewInit {
     
     this.UserListPresenter.deleteUser(id)
   }
+  showcomponent(){
+    // this._viewContainerRef.clear();
+    return this._viewContainerRef.createComponent(
+      this.componentFactoryResolver.resolveComponentFactory(UserFormContainerComponent)
+    );
+  }
+
+  public sortData(key: string): void {
+    debugger
+    this.reverse = !this.reverse;
+    this.key = key;
+    this.orderType = this.UserListPresenter.order(this.orderType);
+    this.sort.emit({ key: this.key, order: this.orderType });
+  }
+
 
 }

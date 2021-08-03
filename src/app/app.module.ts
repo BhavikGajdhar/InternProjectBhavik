@@ -15,6 +15,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { UserFormPresentationComponent } from './user/user-form-container/user-form-presentation/user-form-presentation.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     OverlayModule
     
   ],
-  entryComponents: [ExampleCdkComponent, ComponentPortalExample],
+  entryComponents: [ExampleCdkComponent],
   providers: [],
   bootstrap: [AppComponent,ExampleCdkComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

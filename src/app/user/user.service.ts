@@ -20,6 +20,11 @@ export class UserService {
     
     return this.http.get<any>(this.apiURL+'?q='+search)
   }
+
+  public getUsersAll( key: string, order: string): Observable<any> {
+    debugger
+    return this.http.get<any>(`${this.apiURL}?q=&_sort=${key}&_order=${order}`);
+  }
   //Add User
   public addUser(data: User): Observable<User> {
     return this.http.post<User>(this.apiURL, data);

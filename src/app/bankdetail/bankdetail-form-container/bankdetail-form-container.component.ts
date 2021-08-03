@@ -15,12 +15,15 @@ export class BankdetailFormContainerComponent implements OnInit {
   constructor(
     private restApi: BankdetailService,
     private actRoute: ActivatedRoute
-  ) {}
+  ) {
+    
+    this.bankdetailDataById$ = this.restApi.getBankDetailData(this.id);
+  }
 
   ngOnInit(): void {}
 
   public addbankdetail(bankData: any) {
-    debugger
+  
     if (this.id) {
       this.restApi.putBankDetailData(this.id, bankData).subscribe();
     } else {

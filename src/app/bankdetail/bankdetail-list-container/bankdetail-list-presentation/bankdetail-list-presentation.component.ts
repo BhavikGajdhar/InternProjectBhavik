@@ -37,8 +37,7 @@ export class BankdetailListPresentationComponent implements OnInit,AfterViewInit
     private bankdetailListPresenter: BankdetailListPresenterService,
     private api:BankdetailService
   ) {
-    this.bankdetailList = [];
-    
+    this.bankdetailList = [];    
   }
 
   ngOnInit(): void {

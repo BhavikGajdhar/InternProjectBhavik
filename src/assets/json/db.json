@@ -63,7 +63,7 @@
       "gender": "Male",
       "address": "Bhagod",
       "amount": "20000",
-      "currency_code": "₹",
+      "currency_code": "$",
       "id": 1
     },
     {
@@ -75,7 +75,7 @@
       "gender": "Female",
       "address": "Valsad",
       "amount": "25000",
-      "currency_code": "C$",
+      "currency_code": "€",
       "id": 2
     },
     {
@@ -131,18 +131,18 @@
     {
       "firstname": "Sangam",
       "lastname": "Patel",
-      "clientname": "1Rivet",
+      "clientname": "JBL",
       "email": "sp@gmail.com",
       "office": "Office1",
-      "contactnumber": "986-547-2318",
+      "contactnumber": "995-588-6644",
       "id": 1
     },
     {
       "firstname": "Bhavik",
       "lastname": "Gajdhar",
-      "clientname": "Apple",
+      "clientname": "Boat",
       "email": "neel@gmail.com",
-      "office": "Office2",
+      "office": "Office4",
       "contactnumber": "990-450-3997",
       "id": 3
     },
@@ -152,8 +152,26 @@
       "clientname": "1Rivet",
       "email": "ab@gmail.com",
       "office": "Office3",
-      "contactnumber": "555-555-5555",
+      "contactnumber": "586-478-9546",
       "id": 4
+    },
+    {
+      "firstname": "Ankit",
+      "lastname": "Prajapati",
+      "clientname": "JBL",
+      "email": "p@gmail.com",
+      "office": "Office3",
+      "contactnumber": "256-985-4129",
+      "id": 5
+    },
+    {
+      "firstname": "Jay",
+      "lastname": "Patel",
+      "clientname": "1Rivet",
+      "email": "j@gamil.com",
+      "office": "Office2",
+      "contactnumber": "458-765-8745",
+      "id": 6
     }
   ]
 }
