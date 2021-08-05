@@ -19,8 +19,8 @@ export class UserFormPresentationComponent implements OnInit {
   @Input() public set UserDataById(id: User[]){
     if(id){
       this._userIdData = id
-      this.userForm.patchValue(this.UserDataById)
     }
+    this.userForm.patchValue(this.UserDataById)
   }
 
   public get UserDataById(): User[] {
@@ -42,5 +42,5 @@ export class UserFormPresentationComponent implements OnInit {
   public onSubmit() {
     this.userFormPresenter.user(this.userForm) 
   }
-
+   
 }

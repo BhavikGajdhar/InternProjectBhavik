@@ -1,10 +1,10 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentFactoryResolver, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentFactoryResolver, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { UserFormContainerComponent } from '../../user-form-container/user-form-container.component';
 import { User } from '../../user.model';
-import { UserService } from '../../user.service';
 import { UserListPresenterService } from '../user-list-presenter/user-list-presenter.service';
+
 
 @Component({
   selector: 'app-user-list-presentation',
@@ -13,7 +13,7 @@ import { UserListPresenterService } from '../user-list-presenter/user-list-prese
   changeDetection:ChangeDetectionStrategy.OnPush,
   viewProviders:[UserListPresenterService]
 })
-export class UserListPresentationComponent implements OnInit,AfterViewInit {
+export class UserListPresentationComponent implements OnInit,AfterViewInit,OnDestroy {
 
   searchText!: string;
   @ViewChild('Form')
@@ -34,16 +34,19 @@ export class UserListPresentationComponent implements OnInit,AfterViewInit {
     return this._userList
   }
   @Output() public sort: EventEmitter<any>=new EventEmitter();
+  @Output() public search: EventEmitter<any>=new EventEmitter();
   @Output() public deleteId:EventEmitter<any> = new EventEmitter();
  
   private _userList: User[] = [];
 
   constructor(private UserListPresenter:UserListPresenterService,
-    private api:UserService,
     private _viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver
     ) { 
     this._userList=[];
+  }
+  ngOnDestroy(): void {
+    this.showcomponent();
   }
 
   ngOnInit(): void {
@@ -59,11 +62,11 @@ export class UserListPresentationComponent implements OnInit,AfterViewInit {
     inForm!.pipe(
       
       map(data=>data.search),
-      debounceTime(1000),
-      switchMap(res=>this.api.getSearch(res))
+      debounceTime(500),
+      // switchMap(res=>this.api.getSearch(res))
       )
     .subscribe(res=>{
-     this.userList=res})
+     this.search.emit(res)})
   }
   public deleteUser(id: number) {
     
@@ -77,7 +80,6 @@ export class UserListPresentationComponent implements OnInit,AfterViewInit {
   }
 
   public sortData(key: string): void {
-    debugger
     this.reverse = !this.reverse;
     this.key = key;
     this.orderType = this.UserListPresenter.order(this.orderType);

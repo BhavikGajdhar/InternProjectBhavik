@@ -22,7 +22,6 @@ export class UserService {
   }
 
   public getUsersAll( key: string, order: string): Observable<any> {
-    debugger
     return this.http.get<any>(`${this.apiURL}?q=&_sort=${key}&_order=${order}`);
   }
   //Add User

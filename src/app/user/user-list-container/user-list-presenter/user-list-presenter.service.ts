@@ -19,7 +19,6 @@ export class UserListPresenterService {
     
   }
   public order(order: string): string {
-    debugger
     if (order === 'asc') {
       return 'desc';
     } else {

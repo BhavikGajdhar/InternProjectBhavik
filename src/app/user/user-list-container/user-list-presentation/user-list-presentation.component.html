@@ -5,44 +5,51 @@
       </button>
       <form #Form="ngForm" >
         <div>
-              <input type="text"  name="search"  class="form-control" [(ngModel)]="searchText" placeholder="Searching name">
+              <input type="text"  name="search"  class="col md-7" [(ngModel)]="searchText" placeholder="Searching all Filed">
               <label for="clientname" class="form-label">CLIENT NAME: </label>
-              <select class="form-select" id="clientname" >
-                <option selected disabled value="">Choose...</option>
-                <option value="apple">Apple</option>
-                <option value="jbl">JBL</option>
-                <option value="1rivet">1Rivet</option>
-                <option value="boat">Boat</option>
+              <select class="col md-8" id="clientname" name="search" ngModel>
+                <option selected enabled value="">Choose...</option>
+                <option>Apple</option>
+                <option>JBL</option>
+                <option>1Rivet</option>
+                <option>Boat</option>
               </select>
         </div>
-        </form>
+      </form>
 
     <table class="table table-bordered" class="table" 
     *ngIf="(userList).length > 0; else noResults" >
     <thead>
         <tr>
-            <th scope="col" class="position" (click)="sortData('firstname')">FIRST NAME
-              <span class="glyphicon sort-icon" *ngIf="key =='firstname'"
+            <th scope="col" class="position" (click)="sortData('firstname')">
+              FIRST NAME<span class="fa fa-sort"></span>
+              <span  *ngIf="key =='firstname'"
+                    [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                    
+            </th>
+            <th scope="col" class="position" (click)="sortData('lastname')">LAST NAME
+              <span class="fa fa-sort"></span>
+              <span  *ngIf="key =='lastname'"
                     [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
-            <th scope="col" class="pointer" (click)="sortData('lastname')">LAST NAME
-              <span class="glyphicon sort-icon" *ngIf="key =='lastname'"
+            <th scope="col" class="position" (click)="sortData('clientname')">CLIENT NAME
+              <span class="fa fa-sort"></span>
+              <span  *ngIf="key =='clientname'"
                     [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
-            <th scope="col" class="pointer" (click)="sortData('clientname')">CLIENT NAME
-              <span class="glyphicon sort-icon" *ngIf="key =='clientname'"
+            <th scope="col"class="position" (click)="sortData('email')">EMAIL
+              <span class="fa fa-sort"></span>
+              <span  *ngIf="key =='email'"
                     [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
-            <th scope="col"class="pointer" (click)="sortData('email')">EMAIL
-              <span class="glyphicon sort-icon" *ngIf="key =='email'"
+            <th scope="col"class="position" (click)="sortData('office')">OFFICE
+              <span class="fa fa-sort"></span>
+              <span  *ngIf="key =='office'"
                     [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
-            <th scope="col"class="pointer" (click)="sortData('office')">OFFICE
-              <span class="glyphicon sort-icon" *ngIf="key =='office'"
-                    [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-            </th>
-            <th scope="col"class="pointer" (click)="sortData('contactnumber')">CONTACT NUMBER
-              <span class="glyphicon sort-icon" *ngIf="key =='contactnumber'"
+            <th scope="col"class="position" (click)="sortData('contactnumber')">CONTACT NUMBER
+              <span class="fa fa-sort"></span>
+              <span  *ngIf="key =='contactnumber'"
               [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
             <th scope="col">Action</th>
@@ -57,7 +64,7 @@
             <td> {{user.office}} </td>
             <td> {{user.contactnumber}} </td>
             <td class="text-left">
-                <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" 
+                <!-- <button class="btn btn-outline-primary m-1" data-toggle="tooltip" data-placement="right" title="Edit" 
                   routerLink="/user/edit/{{user.id}}">
                   Edit
                 </button>
@@ -65,7 +72,20 @@
                 <button class="btn btn-outline-danger m-1" data-toggle="tooltip" data-placement="right" title="Delete" 
                  (click)="deleteUser(user.id)" >
                   Delete
-                </button>
+                </button> -->
+                 <div class="dropdown">
+                        <button class="fa fa-ellipsis-h" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item border-bottom border-dark text-info" type="button"
+                                routerLink="/user/edit/{{user.id}}">Edit</button>
+                            <button class="dropdown-item text-danger" type="button"
+                                (click)="deleteUser(user.id)">Delete</button>
+
+                        </div>
+                  </div>
             </td>
         </tr>
     </tbody>

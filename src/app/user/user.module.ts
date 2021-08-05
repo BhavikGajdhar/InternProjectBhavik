@@ -11,7 +11,7 @@ import { UserService } from './user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PhoneMaskDirective } from './user-form-container/user-form-presentation/phone-mask.directive';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule, 
+    OverlayModule
   ],
   providers: [UserService],
 })
